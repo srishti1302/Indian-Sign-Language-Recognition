@@ -44,7 +44,7 @@ def rr_main():
     text.lower()
     try:
         for l in text:
-            if l is not ' ':
+            if l != ' ':
                 img=imageio.imread(path+str(l)+'.jpg')
                 display(img,l)
     except:

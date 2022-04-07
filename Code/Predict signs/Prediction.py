@@ -17,7 +17,7 @@ def pred_main():
     from tkinter import messagebox
     import tkinter as tk
 
-
+    print("prediction.py")
     #global variables
     bg=None
     visual_dict={0:'0',1:'1',2:'2',3:'3',4:'4',5:'5',6:'6',7:'7',8:'8',9:'9',10:'a',11:'b',12:'c',13:'d',14:'e',15:'f',16:'g',17:'h',18:'i',19:'j',20:'k',21:'l',22:'m',23:'n',24:'o',25:'p',26:'q',27:'r',
@@ -46,7 +46,7 @@ def pred_main():
     else:
         method = 1
 
-    model='files/CNN'
+    model=r"C:\Users\Srishti\VScode\Indian-Sign-Language-Recognition\Code\Predict signs\files\CNN"
 
     infile = open(model,'rb')
     cnn = pickle.load(infile)
@@ -104,7 +104,7 @@ def pred_main():
     while(cam.isOpened()):
         _,frame=cam.read(cv2.CAP_DSHOW)
         if frame is not None:
-            orig_signs=cv2.imread('files/signs.png')
+            orig_signs=cv2.imread(r"C:\Users\Srishti\VScode\Indian-Sign-Language-Recognition\Code\Predict signs\files\signs.png")
             signs=cv2.resize(orig_signs,(600,600))
             cv2.imshow("Signs",signs)
             frame=imutils.resize(frame,width=700)

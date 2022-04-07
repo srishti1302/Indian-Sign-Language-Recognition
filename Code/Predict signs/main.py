@@ -25,7 +25,8 @@ selection=1
 
 # =====================Create Database=============================================
 def createdb():
-    conn = sqlite3.connect('files/users_info.db')
+    #conn = sqlite3.connect('files/users_info.db')
+    conn = sqlite3.connect(r"C:\Users\Srishti\VScode\Indian-Sign-Language-Recognition\Code\Predict signs\files\users_info.db")
     c = conn.cursor()
     c.execute(
         "CREATE TABLE IF NOT EXISTS users (name TEXT , passs TEXT,sqltime TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL)")
@@ -45,7 +46,8 @@ def saveadmin():
     elif pass_err == "":
         messagebox.showinfo("Invalid input", "Password can't be Empty")
     else:
-        conn = sqlite3.connect("files/users_info.db")
+        #conn = sqlite3.connect("files/users_info.db")
+        conn = sqlite3.connect(r"C:\Users\Srishti\VScode\Indian-Sign-Language-Recognition\Code\Predict signs\files\users_info.db")
         c = conn.cursor()
         c.execute("INSERT INTO users(name,passs) VALUES(?,?) ", (name_entry.get(), pass_entry.get()))
         conn.commit()
@@ -57,7 +59,8 @@ def loggin():
     while True:
         a = name2_entry.get()
         b = pass2_entry.get()
-        with sqlite3.connect("files/users_info.db") as db:
+       # with sqlite3.connect("files/users_info.db") as db:
+        with sqlite3.connect(r"C:\Users\Srishti\VScode\Indian-Sign-Language-Recognition\Code\Predict signs\files\users_info.db") as db:
             cursor = db.cursor()
         find_user = ("SELECT * FROM users WHERE name = ? AND passs = ?")
         cursor.execute(find_user, [(a), (b)])
@@ -171,7 +174,7 @@ def loggin():
                         super(AnimatedGIF, self).place_forget(**kwargs)
 
                 if __name__ == "__main__":
-                    l = AnimatedGIF(f1, "files/gif2.gif")
+                    l = AnimatedGIF(f1, r"Code\Predict signs\files\gif2.gif")
                     l.pack()
 
                 label4 = Label(f3, text="                            Indian Sign Language Recognition System", font=("arial", 10, "bold"), bg="grey16",

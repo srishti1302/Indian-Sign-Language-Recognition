@@ -27,7 +27,7 @@ pandas==0.25.3
 pickleshare==0.7.5
 Pillow>=7.1.0
 playsound==1.2.2
-PyAudio @ file:PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
+#PyAudio @ file:PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
 pyttsx3==2.88
 pywin32==227
 scikit-learn==0.22.2.post1
